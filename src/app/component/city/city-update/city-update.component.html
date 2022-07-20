@@ -1,0 +1,31 @@
+<form [formGroup]="updateForm" (ngSubmit)="updateCity()" novalidate>
+  <div>
+    <p>Name: </p>
+    <input type="text" formControlName="name">
+  </div>
+  <div>
+    <p>Area: </p>
+    <input type="number" formControlName="area">
+  </div>
+  <div>
+    <p>Population: </p>
+    <input type="text" formControlName="population">
+  </div>
+  <div>
+    <p>GDP: </p>
+    <input type="number" formControlName="gdp">
+  </div>
+  <div>
+    <p>Description: </p>
+    <textarea formControlName="description"></textarea>
+  </div>
+  <div>
+    <p>country</p>
+    <select formControlName="country">
+      <option *ngFor="let item of countries" value="{{item.id}}">{{item.name}}</option>
+    </select>
+  </div>
+  <div>
+    <button type="submit">Update City</button>
+  </div>
+</form>

@@ -1,0 +1,22 @@
+<button [routerLink]="['create']">Thêm</button>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Handle</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let city of cities; index as i">
+  <tr>
+    <th scope="row">{{i + 1}}</th>
+    <td>{{city.name}}</td>
+    <td>{{city.gdp}}</td>
+    <td>{{city.country.name}}</td>
+    <td><button [routerLink]="['update', city.id]">Sửa</button></td>
+  </tr>
+  </tbody>
+</table>
